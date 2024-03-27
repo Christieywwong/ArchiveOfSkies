@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/vhm6vkn.css">
 
-    <link rel="icon" type="image/png" href="imgs/Favicon.png">
+    <link rel="icon" type="image/png" href="/ArchiveOfSkies/assets/imgs/favicon.png">
 
 </head>
 <body class="greybg">
     
   <div class="nav-bar">
     <div class="left-button">
-      <button class="nav-button"><h4 class="title"><a class="nav" href="LandingPage.html">HOME</a></h4>
+      <button class="nav-button"><h4><a class="nav" href="LandingPage.html">HOME</a></h4>
     </div></button>
   
     <div class="skies-title center-title">
@@ -23,44 +23,65 @@
     </div>
 
     <div class="right-button">
-      <button class="nav-button"><h4 class="title"><a class="nav" href="Coords.html">COORDS</a></h4>
+      <button class="nav-button"><h4><a class="nav" href="Coords.html">COORDS</a></h4>
     </div>
   </div>
   
 
 
   <div id="output-container">
+  </div>
 
-    <div id="popup-window">
-      <h1>Pop-up Window</h1>
-      <p>This is a pop-up window.</p>
-      <button id="close-button">Close</button>
-    </div>     
+  <!-- <a href="#" id="popup-link"><img src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016" /></a> -->
 
+
+  <div id="popup-window">
+    <div class="row">
+      <div class="left-column">
+        <img src="https://cdn.glitch.global/a0cfad8a-3e08-4a31-985e-91145f79420e/EmpireState.JPG?v=1710825154667" alt="Paris" width="100%">
+      </div>
+  
+      <div class="right-column">
+        <div class="template-skies"><h3>SKIES</h3></div>      
+        <div>
+          <div>
+            <p class="medium">DATE:</p>
+            <p>July 12, 2023</p><br>
+    
+            <p class="medium">TIME:</p>
+            <p>July 12, 2023</p><br>
+            
+            <p class="medium">LOCATION:</p>
+            <p>EMPIRE STATE BUILDING, NEW YORK</p><br>
+            
+            <p class="medium">COLOR(S) OF THE SKY:</p>
+            <p>ORANGE/BLUE</p><br>
+            
+            <p class="medium">WHAT WAS I DOING?</p>
+            <p>TOURIST STUFF</p><br>
+            
+            <p class="medium">WITH WHOM?</p>
+            <p>MOM AND SISTER</p><br>
+            
+            <p class="medium">ADDITIONAL VISUAL ELEMENT(S)?</p>
+            <p>BUILDINGS</p>
+  
+            <button id="close-button">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script defer src="main.js" ></script>
   </div>
         
 <!--     FILTER -->
   <div class="filter-bar">
-      <!-- <input type="checkbox" id="click">
-        <label for="click" class="click-me"><h4>COLOR OF THE SKY</h4></label>
-        <div class="content">    
-          <div class="selection">
-            <button class="selections-text"><h2>ORANGE</h2></button>
-            <button class="selections-text"><h2>BLUE</h2></button>
-            <button class="selections-text"><h2>PINK / PURPLE</h2></button>
-            <button class="selections-text"><h2>BLACK / GREY</h2></button>
-          </div>
-
-          <label for="click" id="temp"><h4 class="complete">COMPLETE</h4></label>
-        </div>
-    </div>-->
-
-    
-
     <div class="dropdown">
       <button id="allFilter" class="dropbtn">ALL</button>
     </div>
-
 
     <div class="dropdown">
       <button class="dropbtn">COLOR OF THE SKY</button>
@@ -72,7 +93,6 @@
       </div>
     </div>
 
-
     <div class="dropdown">
       <button class="dropbtn">TIME OF THE DAY</button>
       <div class="dropdown-content">
@@ -80,7 +100,6 @@
         <a href="#"><div class="dayOrNight-buttons"><button class="filter-button" id="timeNight">Night</button></div></a>
       </div>
     </div>
-
 
     <div class="dropdown">
       <button class="dropbtn">YEAR</button>

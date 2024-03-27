@@ -92,11 +92,21 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let item of collection){
           const itemElement = document.createElement("div");
           itemElement.innerHTML = `
-                <a href="#" id="popup-link" class="bwImages imageButton"><img src="${item.image}"></a>            
+            <a href="#" class="bwImages open-button" id="popup-link"><img class="filter-image" src="${item.image}"/></a>
           `;
           container.appendChild(itemElement);
+      
+          // Attach event listener inside the loop
+          const popupLink = itemElement.querySelector('.open-button');
+          popupLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            // Show the pop-up window when the link is clicked
+            popupWindow.style.display = "block";
+            console.log("Link clicked:", item.image); // Example action
+          });
         }
       }
+
 
 // fetch('skies.json')
 // .then(function(response) {
@@ -115,7 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //       container.appendChild(itemElement);
 //     }
 //   }
-       
+
+ // Year     
       locationToronto.addEventListener("click", function(){
         const filteredData = collection.filter((item) => item.coordinates == "43.6532° N, 79.3832° W"); // Toronto coordinates
         displayData(filteredData);
@@ -137,11 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
-
-
-
-
+ // Year     
       year2021.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.year === "2021");   
         displayData(filteredData);
@@ -159,11 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
-
-
-
-      
+ // With Whom     
       withWhomAlone.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.withWhom === "Alone");   
         displayData(filteredData);
@@ -177,10 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
-
-
-
+// Day or night     
       timeDay.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.dayOrNight === "Day");   
         displayData(filteredData);
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
+// Additional Visual Elements
       additionalVisualElementsBuildings.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.additionalVisualElements.includes("Buildings"));
         displayData(filteredData);
@@ -214,9 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
-
-
+ // Color       
       colorOrange.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.colorOfTheSky.includes("Orange"));
         displayData(filteredData);
@@ -234,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-      
+// Time  
       timeDay.addEventListener("click", function(){ 
         const filteredData = collection.filter((item) => item.dayOrNight === "Day");   
         displayData(filteredData);
@@ -244,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayData(filteredData);
       });
 
-
+// All
       allFilter.addEventListener("click", function(){ 
         displayData(collection); 
       });
@@ -301,37 +299,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
-
-
-
-// function openPopup(imageSrc) {
-//     const popupImage = document.getElementById('popupImage');
-//     popupImage.src = imageSrc;
-//     document.getElementById('popupContainer').style.display = 'block';
-//   }
+  // Get the elements by their ID
+  var popupLink = document.getElementById("popup-link");
+  var popupWindow = document.getElementById("popup-window");
+  var closeButton = document.getElementById("close-button");
   
-//   // Function to close the popup
-//   function closePopup() {
-//     document.getElementById('popupContainer').style.display = 'none';
-//   }
+  // Hide the pop-up window when the close button is clicked
+  closeButton.addEventListener("click", function() {
+    popupWindow.style.display = "none";
+  });
+
+
+
+
+//   document.addEventListener("DOMContentLoaded", function() {
+//     const button = document.getElementById("showImageBtn");
+//     const dotImage = document.getElementById("dotImage");
   
-//   // Event listener for close button
-//   document.querySelector('.close').addEventListener('click', closePopup);
-
-
-// var popupLink = document.getElementById("popup-link");
-// var popupWindow = document.getElementById("popup-window");
-// var closeButton = document.getElementById("close-button");
-// // Show the pop-up window when the link is clicked
-// popupLink.addEventListener("click", function(event) {
-//   event.preventDefault();
-//   popupWindow.style.display = "block";
-// });
-// // Hide the pop-up window when the close button is clicked
-// closeButton.addEventListener("click", function() {
-//   popupWindow.style.display = "none";
+//     button.addEventListener("click", function() {
+//       dotImage.classList.toggle("visible");
+//     });
 // });
